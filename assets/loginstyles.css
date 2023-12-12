@@ -1,0 +1,128 @@
+.gradient-custom {
+  background: linear-gradient(to right, rgb(44 24 67), rgb(111 33 33));
+  /* Other styles remain the same */
+}
+
+.card-container {
+  perspective: 1000px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.flip-card {
+  position: relative;
+  height: 500px; /* Adjust based on content */
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(-180deg);
+}
+
+.flip-card.flipped .card-front {
+  transform: rotateY(-180deg);
+}
+
+.flip-card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+.form-check-input {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px; /* Adjust size */
+  height: 26px; /* Adjust size */
+  background-color: #6a11cb; /* Match site theme */
+  border-radius: 13px; /* Round edges */
+  border-color: #6a11cb;
+  position: relative;
+  top: -10px; /* Adjust position */
+}
+
+.form-outline {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.form-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline-light {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  color: whitesmoke;
+}
+
+.form-switch .form-check-input {
+  width: 3em; /* Width of the switch */
+  position: absolute;
+  left: 50%; /* Center horizontally in the parent */
+  transform: translateX(-50%); /* Offset by half its own width for perfect centering */
+  top: 2.5em; /* Position below the label */
+  margin-top: 0; /* Reset any top margin */
+  margin-left: 1px;
+}
+
+.form-switch{
+  padding:0;
+}
+
+.form-check.form-switch {
+  text-align: center;
+  margin: 1em auto; /* Center the switch container */
+  position: relative; /* Needed for absolute positioning of the switch */
+}
+
+.form-check-label {
+  display: block;
+  margin-bottom: 0.5em; /* Space between label and switch */
+  color: #54c2cc;
+  text-align: center; /* Center the label text */
+}
+
+
+/* Adjust the knob inside the switch */
+.form-check-input:checked {
+  background-color: goldenrod;
+  border-color: #6a11cb;
+}
+
+.form-check-label.active {
+  color: #dfe667; /* Replace with your desired active color */
+}

@@ -1,0 +1,65 @@
+.contact-us-section {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.contact-title {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    padding-right: 30px;
+}
+
+.office-info h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.office-info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.contact-form form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form .send-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-form .send-btn:hover {
+    background-color: #0056b3;
+}
+body{
+    background-color: #474747;
+}

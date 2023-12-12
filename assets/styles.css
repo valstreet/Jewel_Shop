@@ -1,0 +1,779 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Sometype+Mono:ital@1&display=swap')
+
+  /* Hover effect for navigation links */
+  .navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+a.navbar-brand {
+    -webkit-animation: navbar-brand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: navbar-brand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes navbar-brand {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-800px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateZ(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+
+/* Search form container */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Adjust the space between the input and the button */
+}
+
+/* Search input field */
+.search-input {
+  flex-grow: 1; /* Allow input to fill the space */
+  border-radius: 30px; /* Rounded borders */
+  padding: 0.5rem 1rem; /* Comfortable padding */
+  border: 2px solid #000; /* Border color to match the CTA button */
+  outline: none; /* Remove the default focus outline */
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Focus ring to stand out against the black border */
+}
+
+/* Search button */
+.search-button {
+  padding: 0.5rem 1.5rem; /* Larger padding for a bigger button */
+  border-radius: 30px; /* Rounded borders to match the input field */
+  background-color: #6c757d; /* Background color for the button */
+  color: white; /* Text color */
+  border: 2px solid black; /* Corrected border property */
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.search-button:hover, .search-button:focus {
+  background-color: #5a6268; /* Darker shade on hover for contrast */
+  color: #fff; /* Ensure text color is visible */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.form-control:focus {
+  box-shadow: none; /* Remove default Bootstrap shadow */
+  border-color: #000; /* Match the border color of the search input */
+} 
+
+
+/* Ensure the video container is behind everything else */
+#videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Keeps the video behind other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the navigation bar is positioned relatively and above the video */
+header {
+    position: relative;
+    z-index: 10; /* Higher than the video container */
+}
+
+/* Ensure the main content is also above the video */
+.main-content {
+    position: relative;
+    z-index: 5; /* Higher than the video container */
+    height: 625px;
+    padding-top: 350px;
+}
+
+.main-content h1,
+.main-content p{
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Adjust the object-position for specific videos */
+#videoContainer #diamond {
+    object-position: right center;
+}
+#videoContainer #bracelet{
+    object-position: center;
+}
+
+/* Make sure the video fills the container */
+#videoContainer video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#videoContainer video.active {
+    opacity: 1;
+}
+
+#videoContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+
+@media(max-width: 991px){
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+}
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #343a40;
+    --bs-btn-hover-border-color: #000;
+    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #495057;
+    --bs-btn-active-border-color: #343a40;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6c757;
+    --bs-btn-disabled-border-color: #495057;    }
+
+    .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #212529;
+    --bs-btn-hover-border-color: #ffffff;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #6c757d;
+    --bs-btn-active-border-color: #495057;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #495057;
+    --bs-btn-disabled-border-color: #6c757d; }
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-link:hover {
+    text-decoration: none;
+}
+
+.hover-card {
+    transition: transform 0.3s, border 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent; /* Add a transparent border to avoid layout shift on hover */
+}
+
+/* Hover effect for cards */
+.hover-card:hover {
+    transform: scale(1.05);
+    border: 2px solid #fff; /* White border */
+    box-shadow: 
+        0 0 5px 5px rgba(255, 255, 255, 0.2),  /* Inner soft glow */
+        0 0 10px 10px rgba(255, 255, 255, 0.3), /* Middle glow */
+        0 0 15px 15px rgba(255, 255, 255, 0.4); /* Outer intense glow */
+    cursor: pointer;
+}
+
+
+/* Adjust the size of the icons */
+.highlight-item img {
+    width: 100px; /* Set a fixed width for your icons */
+    height: auto; /* Keep the aspect ratio */
+    margin-right: 10px; /* Add some space between the icon and the text */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for transform and box-shadow */
+
+}
+
+/* Hover effect for icons */
+.highlight-item img:hover {
+transform: translateY(-5px) scale(1.1);
+box-shadow: 0 10px 0px rgba(0, 0, 0, 0.2); /* Shadow below the icon */
+}
+
+/* Ensure that the text next to the icons does not scale up on hover */
+.highlight-item strong {
+    transition: transform 0.3s;
+}
+
+.highlight-item:hover strong {
+    transform: translateY(-5px); /* Move the text up slightly when the icon is hovered */
+}
+
+div.d-flex.flex-column.flex-md-row.flex-wrap.rounded-pill.justify-content-center{
+    background-color: #fcf4e4;
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+   
+}
+
+section.company-highlights.bg-light.start-slide{
+    height: 350px;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply the slide-in animation when the class is added by JavaScript */
+.slide-in {
+  animation: slideIn 3s ease forwards;
+}
+
+/* Initial state of the cards and highlight items before animation */
+.card,
+.highlight-item {
+  opacity: 0; /* Start with cards and highlight items invisible */
+}
+
+/* Media Query for max-width: 768px */
+@media (max-width: 768px) {
+    .highlight-item img {
+        width: 50px; /* Smaller icons for smaller devices */
+        margin-bottom: 5px; /* Space between icon and text */
+    }
+
+    .carousel-caption {
+        position: static; /* Stack the caption below the image on small screens */
+        background-color: transparent;
+        padding: 0;
+        text-align: center;
+    }
+
+    .flip-card {
+        height: 300px;
+        margin-bottom: 30px;
+    }
+
+    .flip-card-front, .flip-card-back {
+        padding: 15px;
+    }
+
+    .card-img {
+        max-width: 100%;
+    }
+
+    .d-flex.flex-column.flex-md-row.flex-wrap.rounded-pill.justify-content-center {
+        width: 100%; /* Full width for smaller screens */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .highlight-item {
+        flex-basis: 100%; /* One item per row */
+        margin-bottom: 10px; /* Space between items */
+    }
+}
+
+/* Media Query for max-width: 992px */
+@media (max-width: 992px) {
+    .highlight-item {
+        flex-basis: calc(50% - 10px); /* Adjust to fit two items per row */
+        margin: 5px; /* Adjust margin for spacing */
+    }
+}
+
+/* Media Query for max-width: 1200px */
+@media (max-width: 1200px) {
+    .d-flex.flex-column.flex-md-row.flex-wrap.rounded-pill.justify-content-center {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .highlight-item {
+        flex-basis: calc(33% - 20px); /* Adjust to fit three items per row */
+        margin: 10px; /* Adjust margin for spacing */
+    }
+}
+
+/* Media Query for screen width between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .highlight-item {
+        flex-direction: column; /* Stack icon and text vertically */
+        align-items: center; /* Center align items */
+        flex-basis: 50%; /* Adjust to fit two items per row */
+        margin: 10px; /* Adjust margin for spacing */
+    }
+
+    .highlight-item img {
+        max-width: 50px;
+    }
+
+    .highlight-item strong {
+        font-size: 0.9em; /* Adjust font size */
+        text-align: center; /* Center align text */
+    }
+}
+/* General settings for screen widths between 575px and 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .flip-cards-section .row {
+        justify-content: center; /* Center the items in the row */
+    }
+
+    .flip-cards-section .col-sm-6 {
+        flex: 0 0 100%; /* Make each column take the full width */
+        max-width: 100%; /* Ensure it doesn't exceed 100% of the container's width */
+        display: flex; /* Enable flexbox for further alignment adjustments */
+        justify-content: center; /* Center the content within each column */
+        margin-bottom: 30px; /* Space between rows */
+    }
+
+    .flip-card {
+        height: auto; /* Allow the height to adjust based on content */
+        min-height: 350px; /* Set a minimum height for each card */
+        display: flex; /* Enable flex layout for the flip card */
+        flex-direction: column; /* Stack the contents of the card vertically */
+        justify-content: space-between; /* Distribute space between the top and bottom of the card */
+    }
+    .footer-newsletter, .footer-links {
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .flip-cards-section .row .col-md-4 .flip-card .flip-card-inner .flip-card-front img,
+    .flip-cards-section .row .col-md-4 .flip-card .flip-card-inner .flip-card-back img {
+        width: 100% ;
+        height: auto ;
+    }
+
+    .flip-cards-section .flip-card h3,
+    .flip-cards-section .flip-card h4 {
+        font-size: 1.2rem; /* Increase the font size for titles */
+    }
+
+    .flip-cards-section .flip-card p {
+        font-size: 1rem; /* Increase the font size for descriptions */
+    }
+
+    .flip-cards-section .flip-card a.btn {
+        padding: 10px 15px; /* Increase padding for better touch target */
+        font-size: 0.9rem; /* Slightly larger font size for buttons */
+    }
+    .three-cards .row .col-6 {
+        flex: 0 0 100%; /* Make each card take the full width */
+        max-width: 100%; /* Ensure it doesn't exceed 100% of the container's width */
+    }
+
+    .three-cards .card {
+        height: auto; /* Allow the card height to adjust based on content */
+    }
+
+    .three-cards .card-img-top {
+        width: 100%; /* Full width for images */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .three-cards .card-title {
+        font-size: 1.3rem; /* Slightly larger font size for titles */
+    }
+
+    .three-cards .card-text {
+        font-size: 1rem; /* Adjust font size for better readability */
+    }
+}
+
+
+
+#jewelryCarousel {
+  display: flex;
+  align-items: start;
+}
+
+/* Adjust the carousel inner to take full height */
+.carousel-inner {
+  height: 100%;
+}
+/* Adjust the size and position of the carousel-caption */
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  text-align: left; /* Align text to the left */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for legibility */
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+/* Carousel caption background */
+  .text-bg {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 0.25rem;
+    padding: 1rem;
+  }
+
+
+  /* Animation for text */
+  .animate-text {
+animation: fadeIn 2.5s cubic-bezier(.17,.67,.83,.67)
+  }
+
+  /* Keyframes for fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+ /* Flip-Card Styles */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.flip-card-front {
+  background-color: #fff;
+  color: black;
+}
+
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+.section-title {
+  color: #fff;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
+/* Flip animation */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card content styling */
+.card-img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  height: auto;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+/* Button styling */
+.btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+
+/*testimonial section*/
+.testimonials-section {
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #ffffff 74%);
+  padding: 50px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Needed for absolute positioning of testimonials */
+  height: auto; /* Adjust to auto for flexible height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.testimonials-container {
+  column-count: 3; /* Create 3 columns */
+  column-gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+.testimonial {
+  break-inside: avoid-column; /* Prevents the testimonials from being split across columns */
+  page-break-inside: avoid; /* For older browsers */
+  -webkit-column-break-inside: avoid; /* For Chrome and Safari */
+  display: block; /* Change to block for column flow */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0; /* Start with testimonials hidden */
+  transition: opacity 2s ease-in-out;
+}
+
+/* When visible, fade in the testimonial */
+.testimonial.visible {
+  opacity: 1;
+}
+
+.cta-button-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.cta-button {
+  background-color: #fff;
+  color: black;
+  border-radius: 30px; /* Slightly more rounded */
+  padding: 15px 30px; /* Increased padding for a larger button */
+  font-size: 1.6em; /* Larger font size */
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Transition for all properties */
+  border: none; 
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+
+}
+
+.cta-button:hover, .cta-button:focus {
+  background-color: #343a40;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a 'lifting' effect */
+  transform: translateY(-2px); /* Slight lift on hover */
+   -webkit-box-shadow:0px 0px 105px 5px rgba(42,5,250,0.9);
+-moz-box-shadow: 0px 0px 105px 5px rgba(42,5,250,0.9);
+box-shadow: 0px 0px 105px 5px rgba(42,5,250,0.9);
+}
+
+/* Focus styles for accessibility */
+.cta-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(127, 127, 213, 0.5); 
+}
+
+}
+
+.blockquote-footer{
+    font: "Roboto Mono";
+}
+
+.site-footer.container-fluid {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  background: rgb(124,123,123);
+background: -moz-linear-gradient(329deg, rgba(124,123,123,0.9108018207282913) 14%, rgba(0,0,0,0.6979166666666667) 55%);
+background: -webkit-linear-gradient(329deg, rgba(124,123,123,0.9108018207282913) 14%, rgba(0,0,0,0.6979166666666667) 55%);
+background: linear-gradient(329deg, rgba(124,123,123,0.9108018207282913) 14%, rgba(0,0,0,0.6979166666666667) 55%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7c7b7b",endColorstr="#000000",GradientType=1);
+}
+
+.footer-newsletter {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-newsletter h2 {
+    margin-bottom: 10px;
+}
+
+.footer-newsletter p {
+    margin-bottom: 20px;
+}
+
+.footer-newsletter form {
+    display: inline-block;
+    max-width: 100%; /* Ensure the form does not overflow its container */
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #7f7fd5; /* Add a border to match the button */
+    border-radius: 5px;
+    width: 300px; /* Set a specific width for the textbox */
+    max-width: 80%; /* Make it responsive */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.footer-newsletter input[type="email"]:hover,
+.footer-newsletter input[type="email"]:focus {
+    border-color: #6c63ff; /* Change border color on hover/focus */
+    box-shadow: 0 0 8px rgba(127, 127, 213, 0.5); /* Add a glow effect */
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #7f7fd5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.footer-newsletter button:hover {
+    background-color: #6c63ff; /* Lighter purple on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin-right: 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-flex; /* Changed to inline-flex for horizontal alignment */
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    color: #fff;
+    background-color: #3B5998; /* Default background color */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+.social-links{
+    text-align: center;
+}
+
+/* Hover state for all social icons */
+.social-links a:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+/* Facebook icon */
+.fa-facebook {
+    background-color: #3B5998;
+}
+
+/* Twitter icon (assuming fa-x-twitter is correct) */
+.fa-x-twitter {
+    background-color: rgb(24, 49, 83);
+}
+
+/* Instagram icon */
+.fa-instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);}
+
+/* Adjust the hover state for each social icon */
+.fa-facebook:hover {
+    background-color: #2d4373;
+}
+
+.fa-x-twitter:hover {
+    background-color: rgb(0, 28, 64);
+}
+
+.fa-instagram:hover {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+/* Accessibility focus styles */
+.social-links a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.5);
+    position: relative;
+    z-index: 1;
+}
