@@ -38,10 +38,10 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" role="menu">
               <li><a class="dropdown-item" href="/public/rings.php" role="menuitem">Rings</a></li>
-              <li><a class="dropdown-item" href="#" role="menuitem">Necklaces</a></li>
-              <li><a class="dropdown-item" href="#" role="menuitem">Bracelets</a></li>
-              <li><a class="dropdown-item" href="#" role="menuitem">Watches</a></li>
-              <li><a class="dropdown-item" href="#" role="menuitem">Diamonds</a></li>
+              <li><a class="dropdown-item" href="/public/necklace.php" role="menuitem">Necklaces</a></li>
+              <li><a class="dropdown-item" href="/public/bracelets.php" role="menuitem">Bracelets</a></li>
+              <li><a class="dropdown-item" href="/public/watches.php" role="menuitem">Watches</a></li>
+              <li><a class="dropdown-item" href="/public/diamonds.php" role="menuitem">Diamonds</a></li>
 
               <li>
                 <hr class="dropdown-divider">

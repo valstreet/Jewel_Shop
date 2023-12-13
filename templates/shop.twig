@@ -43,11 +43,12 @@
             <div class="row g-4 mb-4">
                 <div class="col">
                     <div class="card">
-                        <img src="{{ product.image }}" class="card-img-bot" alt="{{ product.alt }}">
+                    <a href="{{ product.link }}">
+                        <img src="{{ product.image }}" class="card-img-bot" alt="{{ product.alt }}"></a>
                         <div class="card-body">
                             <h5 class="card-title">{{ product.title }}</h5>
                             <p class="card-text">{{ product.description }}</p>
-                            <a href="#" class="btn btn-primary">View More</a>
+                            <a href="{{ product.link }}" class="btn btn-primary">View More</a>
                         </div>
                     </div>
                 </div>

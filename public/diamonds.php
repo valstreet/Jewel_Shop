@@ -1,40 +1,6 @@
 <?php
+require_once 'C:\xampp\htdocs\Jewel_Shop\templates\config.php';
 require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php';
-
-$regularSizeProducts = [
-    [
-        'title' => 'Rings',
-        'description' => 'Bold and nice.',
-        'image' => '/assets/shop-images/shop-products/manRing.png',
-        'alt' => 'Man Ring',
-        'link' => 'rings.php' 
-
-    ],
-    [
-        'title' => 'Necklaces',
-        'description' => 'Sophisticated elegance.',
-        'image' => '/assets/shop-images/shop-products/womanNecklace.png',
-        'alt' => 'Woman Necklace',
-        'link' => 'necklace.php' 
-    ]
-];
-
-$wideSizeProducts = [
-    [
-        'title' => 'Watches',
-        'description' => 'Elegant and timeless.',
-        'image' => '/assets/shop-images/shop-products/femaleWatch.png',
-        'alt' => 'Female Watch',
-        'link' => 'watches.php'
-    ],
-    [
-        'title' => 'Bracelets',
-        'description' => 'Stylish and modern.',
-        'image' => '/assets/shop-images/shop-products/womanBracelet.png',
-        'alt' => 'Woman Bracelet',
-        'link' => 'bracelet.php' 
-    ]
-];
 
 $diamondCollection = [
     [
@@ -63,9 +29,7 @@ $diamondCollection = [
     ]
 ];
 
-echo $twig->render('shop.twig', [
-    'regularSizeProducts' => $regularSizeProducts,
-    'wideSizeProducts' => $wideSizeProducts,
-    'diamondCollection' => $diamondCollection
+echo $twig->render('diamonds.twig', [
+ 'diamondCollection' => $diamondCollection
 ]);
 ?>

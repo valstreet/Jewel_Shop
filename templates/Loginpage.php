@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  {% include 'header.php' %}
+  <?php include ('C:\xampp\htdocs\Jewel_Shop\templates\header.php');?>
 
 <main class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
@@ -93,7 +93,7 @@
     </div>
   </div>
 </main>
-
+<script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 <script>
 // JavaScript for toggling the flip card

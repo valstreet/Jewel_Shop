@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watches Urban Ice</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/ringstyle.css">
+</head>
+<body>
+    {% include 'header.php' %}
+
+ <main class="container my-5">
+        <h2 class="text-center mb-4">Our Watches Collection</h2>
+        <div class="row">
+            {% for watch in watches %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <a href="/product.php?id={{ watch.product_id }}"> 
+                            <img src="{{ watch.image }}" class="card-img-top" alt="{{ watch.product_name }}">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ watch.product_name }}</h5>
+                            <p class="card-text">{{ watch.description }}</p>
+                            <p class="card-text"><strong>Price:</strong> ${{ watch.price }}</p>
+                            <a href="/product.php?id={{ watch.product_id }}" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+
+    {% include 'footer.php' %}
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

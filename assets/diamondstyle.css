@@ -296,66 +296,83 @@ a.navbar-brand {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
 }
 
-.card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    border-radius: 10px; /* Rounded corners for the card */
-    overflow: hidden; /* Ensures no content spills out */
+/* Styling for diamond gallery */
+.diamond-gallery {
+    position: relative;
+    margin-bottom: 30px;
 }
 
-.card-img-top {
-    width: 300px; /* Ensure the image covers the full card width */
-    height: 350px; /* Fixed height for uniformity */
-    object-fit: cover; /* Ensures images cover the area without stretching */
-    object-position: center; /* Align the image to the center */
+.diamond-image {
+    width: 100%;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.card-body {
-    background: #fff; /* Light background for the content */
-    color: #212529; /* Darker text for contrast */
+.diamond-image.active {
+    display: block;
 }
 
-.site-footer {
-    background: #2c3e50; /* Darker footer background */
-    padding: 30px 10px; /* Adjust padding */
+.gallery-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
 }
 
-.footer-newsletter input[type="email"] {
-    width: 100%; /* Full width on small screens */
-    margin-bottom: 10px; /* Space between input and button */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    cursor: pointer;
 }
 
-@media (min-width: 768px) {
-    .footer-newsletter input[type="email"] {
-        width: auto; /* Auto width on larger screens */
-        margin-bottom: 0; /* Reset bottom margin */
-    }
+.left-arrow {
+    left: 10px;
 }
 
-.btn-primary, .btn-success {
-    border: 0; /* Remove border */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+.right-arrow {
+    right: 10px;
 }
 
-.search-button {
-    background-color: #2c3e50; /* Consistent color with the theme */
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+/* Additional styles */
+.container-fluid.bg-light {
+    background-color: rgba(255,255,255,0.8);
+    padding: 60px 15px;
+    margin: 80px 0;
+    border-top: 2px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.container-fluid.bg-light h2,
+.container-fluid.bg-light p {
+    color: #343a40;
 }
 
 @media (max-width: 768px) {
-    .card {
-        margin-bottom: 20px; /* Space between cards on small screens */
+    .container-fluid.bg-light h2 {
+        font-size: 2rem;
     }
-    .card-img-top {
-        height: 200px; /* Slightly smaller height for smaller screens */
+    .container-fluid.bg-light p {
+        font-size: 1rem;
     }
 }
 
-/* Additional styles for hover effects and transitions */
-.card:hover {
-    transform: translateY(-5px); /* Slight lift effect */
-    transition: transform 0.3s ease-in-out;
-}
-
-.btn-primary:hover, .btn-success:hover {
-    opacity: 0.9; /* Slight transparency on hover */
-    transition: opacity 0.3s ease-in-out;
+.btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #fff;
 }
