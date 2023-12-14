@@ -1,5 +1,7 @@
 <?php
-require_once 'C:\xampp\htdocs\Jewel_Shop\templates\config.php'; // Ensure this path is correct
+session_start(); // Start the session at the beginning
+
+require_once 'C:\xampp\htdocs\Jewel_Shop\templates\config.php'; 
 require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php';
 
 try {
@@ -10,7 +12,14 @@ try {
 }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
+    exit; // Exit the script if a database error occurs
 }
 
-echo $twig->render('rings.twig', ['rings' => $rings]);
+$variables = [
+    'loggedIn' => isset($_SESSION['user_id']),
+    'username' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
+    'rings' => $rings // Include rings data in the variables array
+];
+
+echo $twig->render('rings.twig', $variables);
 ?>

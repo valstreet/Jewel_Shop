@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'C:\xampp\htdocs\Jewel_Shop\templates\config.php';
 require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php';
 
@@ -28,8 +30,12 @@ $diamondCollection = [
         'link' => '/diamonds.php'
     ]
 ];
+$variables = [
+    'loggedIn' => isset($_SESSION['user_id']),
+    'username' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
+    'diamondCollection' => $diamondCollection // Include diamond collection data
+];
 
-echo $twig->render('diamonds.twig', [
- 'diamondCollection' => $diamondCollection
-]);
+// Render the diamonds.twig template, passing the combined variables array
+echo $twig->render('diamonds.twig', $variables);
 ?>

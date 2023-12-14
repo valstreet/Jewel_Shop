@@ -7,10 +7,16 @@ try {
     $stmt->execute();
 
     $necklaces = $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-catch(PDOException $e) {
+} catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
+    exit; // Exit the script if a database error occurs
 }
 
-echo $twig->render('necklace.twig', ['necklaces' => $necklaces]);
+$variables = [
+    'loggedIn' => isset($_SESSION['user_id']),
+    'username' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
+    'necklaces' => $necklaces // Include necklaces data in the variables array
+];
+
+echo $twig->render('necklace.twig', $variables);
 ?>

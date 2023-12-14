@@ -6,11 +6,17 @@ try {
     $stmt = $conn->prepare("SELECT * FROM products WHERE category = 'Bracelet'");
     $stmt->execute();
 
-    $bracelets = $stmt->fetchAll(PDO::FETCH_ASSOC); //  variable name
-}
-catch(PDOException $e) {
+    $bracelets = $stmt->fetchAll(PDO::FETCH_ASSOC); // Fetching bracelet data
+} catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
+    exit; // Exit the script if a database error occurs
 }
 
-echo $twig->render('bracelets.twig', ['bracelets' => $bracelets]); // array key
+$variables = [
+    'loggedIn' => isset($_SESSION['user_id']),
+    'username' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
+    'bracelets' => $bracelets // Include bracelets data in the variables array
+];
+
+echo $twig->render('bracelets.twig', $variables); // Pass the correct variables array
 ?>

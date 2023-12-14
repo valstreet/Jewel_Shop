@@ -9,11 +9,17 @@ try {
 
     // Fetch all watches
     $watches = $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-catch(PDOException $e) {
+} catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
+    exit; // Exit the script if a database error occurs
 }
 
-// Render the watches.twig template, passing the watches data
-echo $twig->render('watches.twig', ['watches' => $watches]);
+$variables = [
+    'loggedIn' => isset($_SESSION['user_id']),
+    'username' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
+    'watches' => $watches // Include watches data in the variables array
+];
+
+// Render the watches.twig template, passing the combined variables array
+echo $twig->render('watches.twig', $variables);
 ?>
