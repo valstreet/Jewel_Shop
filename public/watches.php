@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\xampp\htdocs\Jewel_Shop\templates\config.php'; // Path to your config file
-require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php'; // Path to your Twig initialization file
+require_once 'C:\xampp\htdocs\Jewel_Shop\templates\config.php'; // Path to config file
+require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php'; // Path to Twig initialization file
 
 try {
     // Prepare and execute the query to select watches

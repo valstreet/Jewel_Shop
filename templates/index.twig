@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,7 @@
 </head>
 
 <body>
+{% include 'header.twig' %}
 
 <div id="videoContainer">
     <video autoplay muted loop id="diamond" loading="lazy">
@@ -23,7 +25,6 @@
         <source src="{{ braceletVideo }}" type="video/mp4">
     </video>
 </div>
-{% include 'header.php' %}
 
 <main class="main-content">
     <div class="jumbotron jumbotron-fluid text-white">
@@ -233,8 +234,8 @@
     </div>
 </section>
 
+<script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/main.js" defer></script>
-<script src="/assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 {% include 'footer.php' %}
 
 </body>

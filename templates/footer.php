@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer class = "text-dark">
 
     &copy; 2023 Urban Ice Online Shop. All rights reserved.
 </footer>

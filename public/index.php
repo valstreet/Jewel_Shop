@@ -1,12 +1,15 @@
 <?php
 
-
+session_start();
 // Include the init_twig.php file to initialize Twig
 require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php';
 
 
 
 $variables = [
+
+'loggedIn' => isset($_SESSION['user_id']),
+ 'username' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
 'carouseltext1' => 'Discover the exclusive touch of jewelry that echoes your inner strength. Our 3D printed pieces are more than mere accessories; they are the embodiment of precision, power, and style.',
 'carouseltext2' => 'Transcend the ordinary with custom-crafted designs that celebrate your unique spirit. Every line, contour, and finish in our collection celebrates the wearer. Make a statement, showcase elegance, and ensure your aura is felt.',
 'carouseltext3' => 'Embrace the innovation of 3D printing where every piece is a work of art, mirroring your most ambitious dreams. This is the art of modern jewelry for those who command with assurance and chart their own path.',

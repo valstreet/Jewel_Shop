@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php';
 
 $variables = 
@@ -51,15 +52,19 @@ $variables =
             'answer' => 'We are deeply committed to sustainability. Our processes, including 3D printing, are designed to minimize environmental impact. We use recycled materials wherever possible and continuously strive to reduce our carbon footprint.'
         ],
         
-        // Add more FAQ items as needed
     ],
     'contactInfo' =>
      [
         'address' => '123 Mystery road, Valletta, Malta',
         'phone' => '+356 1234 5678',
         'email' => 'info@urbanice.com'
-    ]
+    ],
+
+ 'loggedIn' => isset($_SESSION['user_id']),
+    'username' => isset($_SESSION['username']) ? $_SESSION['username'] : 'Guest',
 ];
+
+
 
 echo $twig->render('about.twig', $variables);
 ?>
