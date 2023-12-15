@@ -1,0 +1,277 @@
+header{
+    background-color: #1c1c1c;
+}
+.site-footer.container-fluid {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  background: rgb(124,123,123);
+background: -moz-linear-gradient(329deg, rgba(124,123,123,0.9108018207282913) 14%, rgba(0,0,0,0.6979166666666667) 55%);
+background: -webkit-linear-gradient(329deg, rgba(124,123,123,0.9108018207282913) 14%, rgba(0,0,0,0.6979166666666667) 55%);
+background: linear-gradient(329deg, rgba(124,123,123,0.9108018207282913) 14%, rgba(0,0,0,0.6979166666666667) 55%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7c7b7b",endColorstr="#000000",GradientType=1);
+}
+
+.footer-newsletter {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-newsletter h2 {
+    margin-bottom: 10px;
+}
+
+.footer-newsletter p {
+    margin-bottom: 20px;
+}
+
+.footer-newsletter form {
+    display: inline-block;
+    max-width: 100%; /* Ensure the form does not overflow its container */
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #7f7fd5; /* Add a border to match the button */
+    border-radius: 5px;
+    width: 300px; /* Set a specific width for the textbox */
+    max-width: 80%; /* Make it responsive */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.footer-newsletter input[type="email"]:hover,
+.footer-newsletter input[type="email"]:focus {
+    border-color: #6c63ff; /* Change border color on hover/focus */
+    box-shadow: 0 0 8px rgba(127, 127, 213, 0.5); /* Add a glow effect */
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #7f7fd5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.footer-newsletter button:hover {
+    background-color: #6c63ff; /* Lighter purple on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    margin-right: 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-flex; /* Changed to inline-flex for horizontal alignment */
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    color: #fff;
+    background-color: #3B5998; /* Default background color */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+.social-links{
+    text-align: center;
+}
+
+/* Hover state for all social icons */
+.social-links a:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+/* Facebook icon */
+.fa-facebook {
+    background-color: #3B5998;
+}
+
+/* Twitter icon */
+.fa-x-twitter {
+    background-color: rgb(24, 49, 83);
+}
+
+/* Instagram icon */
+.fa-instagram {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);}
+
+/* Adjust the hover state for each social icon */
+.fa-facebook:hover {
+    background-color: #2d4373;
+}
+
+.fa-x-twitter:hover {
+    background-color: rgb(0, 28, 64);
+}
+
+.fa-instagram:hover {
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+/* Accessibility focus styles */
+.social-links a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.5);
+    position: relative;
+    z-index: 1;
+}
+
+  /* Hover effect for navigation links */
+  .navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+a.navbar-brand {
+    -webkit-animation: navbar-brand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: navbar-brand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes navbar-brand {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-800px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateZ(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+
+/* Search form container */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Adjust the space between the input and the button */
+}
+
+/* Search input field */
+.search-input {
+  flex-grow: 1; /* Allow input to fill the space */
+  border-radius: 30px; /* Rounded borders */
+  padding: 0.5rem 1rem; /* Comfortable padding */
+  border: 2px solid #000; /* Border color to match the CTA button */
+  outline: none; /* Remove the default focus outline */
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Focus ring to stand out against the black border */
+}
+
+/* Search button */
+.search-button {
+  padding: 0.5rem 1.5rem; /* Larger padding for a bigger button */
+  border-radius: 30px; /* Rounded borders to match the input field */
+  background-color: #6c757d; /* Background color for the button */
+  color: white; /* Text color */
+  border: 2px solid black; /* Corrected border property */
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.search-button:hover, .search-button:focus {
+  background-color: #5a6268; /* Darker shade on hover for contrast */
+  color: #fff; /* Ensure text color is visible */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.form-control:focus {
+  box-shadow: none; /* Remove default Bootstrap shadow */
+  border-color: #000; /* Match the border color of the search input */
+} 
+@media(max-width: 991px){
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+}
+/* General settings for screen widths between 575px and 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .footer-newsletter, .footer-links {
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+}
+.btn-success {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #000;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #343a40;
+    --bs-btn-hover-border-color: #000;
+    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #495057;
+    --bs-btn-active-border-color: #343a40;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #6c757;
+    --bs-btn-disabled-border-color: #495057;    }
+
+    .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #6c757d;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #212529;
+    --bs-btn-hover-border-color: #ffffff;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #6c757d;
+    --bs-btn-active-border-color: #495057;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #495057;
+    --bs-btn-disabled-border-color: #6c757d; }

@@ -16,14 +16,14 @@
             {% for watch in watches %}
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <a href="/product.php?id={{ watch.product_id }}"> 
+                        <a href="/public/product.php?id={{ watch.product_id }}"> 
                             <img src="{{ watch.image }}" class="card-img-top" alt="{{ watch.product_name }}">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ watch.product_name }}</h5>
                             <p class="card-text">{{ watch.description }}</p>
                             <p class="card-text"><strong>Price:</strong> ${{ watch.price }}</p>
-                            <a href="/product.php?id={{ watch.product_id }}" class="btn btn-primary">View Details</a>
+                            <a href="/public/product.php?id={{ watch.product_id }}" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>

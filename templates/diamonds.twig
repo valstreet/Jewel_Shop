@@ -9,55 +9,55 @@
 </head>
 <body>
     {% include 'header.twig' %}
- <div class="container my-5 text-center">
+    <div class="container my-5 text-center">
         <div class="row">
             {% for diamond in diamondCollection %}
                 <div class="col-lg-3 diamond-gallery">
-                    <a href="{{ diamond.link }}">
-                        {% for image in diamond.images %}
-                            <img src="{{ image }}" alt="{{ diamond.title }}" class="img-fluid mb-3  rounded diamond-image {% if loop.first %}active{% endif %}">
-                        {% endfor %}
+                    <!-- Link to the product detail page with product_id -->
+                    <a href="/public/product.php?id={{ diamond.product_id }}">
+                        <div class="image-container">
+                            {% for image in diamond.images %}
+                                <img src="{{ image }}" alt="{{ diamond.title }}" class="img-fluid mb-3 rounded diamond-image {% if loop.first %}active{% endif %}">
+                            {% endfor %}
+                        </div>
                     </a>
-                    <div class="gallery-navigation">
-                        <span class="arrow left-arrow">&lt;</span>
-                        <span class="arrow right-arrow">&gt;</span>
-                    </div>
+                    <button class="btn btn-primary left-arrow">Left</button>
+                    <button class="btn btn-primary right-arrow">Right</button>
                     <h5>{{ diamond.title }}</h5>
-                    <p class= "text-dark">{{ diamond.description }}</p>
-                    <a href="#" class="btn btn-outline-dark mt-2">Contact us for a quote</a>
+                    <p class="text-dark">{{ diamond.description }}</p>
+                    <!-- 'View Details' button also uses product_id -->
+                    <a href="/public/product.php?id={{ diamond.product_id }}" class="btn btn-outline-dark mt-2">View Details</a>
                 </div>
             {% endfor %}
         </div>
     </div>
     {% include 'footer.php' %}
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.diamond-gallery').forEach(gallery => {
-        const images = gallery.querySelectorAll('.diamond-image');
-        const leftArrow = gallery.querySelector('.left-arrow');
-        const rightArrow = gallery.querySelector('.right-arrow');
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.diamond-gallery').forEach(gallery => {
+                const images = gallery.querySelectorAll('.diamond-image');
+                const leftArrow = gallery.querySelector('.left-arrow');
+                const rightArrow = gallery.querySelector('.right-arrow');
+                let currentIndex = 0;
 
-        let currentIndex = 0;
+                const showImage = index => {
+                    images.forEach(img => img.classList.remove('active'));
+                    images[index].classList.add('active');
+                };
 
-        const showImage = index => {
-            images.forEach(img => img.classList.remove('active'));
-            images[index].classList.add('active');
-        };
+                leftArrow.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    showImage(currentIndex);
+                });
 
-        leftArrow.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showImage(currentIndex);
+                rightArrow.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    showImage(currentIndex);
+                });
+            });
         });
-
-        rightArrow.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            showImage(currentIndex);
-        });
-    });
-});
-</script>
+    </script>
     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

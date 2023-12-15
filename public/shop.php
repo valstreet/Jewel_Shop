@@ -34,7 +34,7 @@ $wideSizeProducts = [
         'description' => 'Stylish and modern.',
         'image' => '/assets/shop-images/shop-products/womanBracelet.png',
         'alt' => 'Woman Bracelet',
-        'link' => 'bracelet.php' 
+        'link' => 'bracelets.php' 
     ]
 ];
 
