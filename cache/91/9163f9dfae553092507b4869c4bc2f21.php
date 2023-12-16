@@ -203,49 +203,40 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
 </script>
- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-            var signInButton = document.getElementById('googleSignInButton');
-            if (signInButton) {
-                signInButton.addEventListener('click', signInWithGoogle);
-            }
-        });
-
-        function signInWithGoogle() {
-            var provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function(result) {
-            // Send token to backend via AJAX for verification and user session creation
-            var idToken = result.credential.idToken;
-            fetch('/public/login.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'idToken=' + encodeURIComponent(idToken)
-            })
-            .then(response => response.text())
-            .then(data => {
-                // Handle response from backend
-                console.log(data);
-                window.location.href = '/public/index.php'; // Redirect on success
-            })
-            .catch(error => console.error('Error:', error));
-        }).catch(function(error) {
-            // Handle Errors here.
-            console.error('Error during Google Sign-In:', error);
-        });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var signInButton = document.getElementById('googleSignInButton');
+    if (signInButton) {
+        signInButton.addEventListener('click', signInWithGoogle);
     }
-    </script>
-    <script>
-    FileInputStream serviceAccount =
-new FileInputStream(\"C:/Users/valen/Downloads/urbaniceapi-firebase-adminsdk-57s8l-ba66aa892e.json\");
+});
 
-FirebaseOptions options = new FirebaseOptions.Builder()
-  .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-  .build();
-
-FirebaseApp.initializeApp(options);
+function signInWithGoogle() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        // Send token to backend via AJAX for verification and user session creation
+        var idToken = result.credential.idToken;
+        fetch('/public/login.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'idToken=' + encodeURIComponent(idToken)
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Handle response from backend
+            console.log(data);
+            window.location.href = '/public/index.php'; // Redirect on success
+        })
+        .catch(error => console.error('Error:', error));
+    }).catch(function(error) {
+        // Handle Errors here.
+        console.error('Error during Google Sign-In:', error);
+    });
+};
 </script>
+    
 </body>
 </html>
 ";
