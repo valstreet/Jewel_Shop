@@ -95,31 +95,33 @@ session_start();
               <li><a class=\"dropdown-item\" href=\"#\" role=\"menuitem\">3D-Printed Pieces</a></li>
             </ul>
           </li>
-              <form class=\"d-flex mt-3 search-form \" role=\"search\">
-  <input class=\"form-control search-input\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-  <button class=\"btn search-button\" type=\"submit\">Search</button>
+<form class=\"d-flex mt-3 search-form\" action=\"/public/search.php\" method=\"get\">
+    <input class=\"form-control search-input\" type=\"search\" placeholder=\"Search\" name=\"q\" aria-label=\"Search\">
+    <button class=\"btn search-button\" type=\"submit\">Search</button>
 </form>
+
+
         </ul>
          <div class=\"d-flex flex-column align-items-center flex-lg-row justify-content-center gap-3 mt-4\">
                             ";
-        // line 68
+        // line 70
         if (($context["loggedIn"] ?? null)) {
-            // line 69
+            // line 71
             echo "                                <div class=\"d-flex align-items-center\">
                                     <span class=\"nav-link text-white col-lg-8\">Welcome, ";
-            // line 70
+            // line 72
             echo twig_escape_filter($this->env, ($context["username"] ?? null), "html", null, true);
             echo "</span>
                                     <a href=\"/public/logout.php\" class=\"btn btn-danger ms-2\">Log Out</a>
                                 </div>
                             ";
         } else {
-            // line 74
+            // line 76
             echo "                                <a href=\"/public/Loginpage.php\" class=\"nav-link text-white\">Log In</a>
                                 <a href=\"/public/Loginpage.php\" class=\"btn btn-success ms-2\">Sign Up</a>
                             ";
         }
-        // line 77
+        // line 79
         echo "                        </div>
                     </div>
                 </div>
@@ -153,7 +155,7 @@ session_start();
      */
     public function getDebugInfo()
     {
-        return array (  123 => 77,  118 => 74,  111 => 70,  108 => 69,  106 => 68,  37 => 1,);
+        return array (  125 => 79,  120 => 76,  113 => 72,  110 => 71,  108 => 70,  37 => 1,);
     }
 
     public function getSourceContext()

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban ice search results</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/productstyles.css"> 
+</head>
+<body>
+    {% include 'header.twig' %}
+
+    <main class="container my-5">
+        <h2>Search Results</h2>
+        {% if results|length > 0 %}
+            <ul>
+                {% for product in results %}
+                    <li><a href="/public/product.php?id={{ product.product_id }}">{{ product.product_name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found for '{{ query }}'.</p>
+        {% endif %}
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>

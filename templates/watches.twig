@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ watch.product_name }}</h5>
                             <p class="card-text">{{ watch.description }}</p>
-                            <p class="card-text"><strong>Price:</strong> ${{ watch.price }}</p>
+                            <p class="card-text"><strong>Price:</strong> £{{ watch.price }}</p>
                             <a href="/public/product.php?id={{ watch.product_id }}" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
     </main>
 
 
-    {% include 'footer.php' %}
+    {% include 'footer.html' %}
     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

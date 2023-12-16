@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Urban Ice Shopping Cart</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/productstyles.css"> 
+</head>
+<body>
+    {% include 'header.twig' %}
+
+    <main class="container my-5">
+        <h2>Your Shopping Cart</h2>
+        <form action="/public/update_cart.php" method="post">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% set grandTotal = 0 %}
+                            {% for item in cart %}
+                                {% set total = item.price * item.quantity %}
+                                <tr>
+                                    <td>{{ item.product_name }}</td>
+                                    <td>${{ item.price }}</td>
+                                    <td>
+                                        <input type="number" name="cart[{{ item.product_id }}][quantity]" value="{{ item.quantity }}" min="1" class="form-control">
+                                    </td>
+                                    <td>${{ total }}</td>
+                                    <td>
+                                        <input type="submit" name="cart[{{ item.product_id }}][remove]" value="Remove" class="btn btn-danger btn-sm">
+                                    </td>
+                                </tr>
+                                {% set grandTotal = grandTotal + total %}
+                            {% endfor %}
+                            <tr class="table-secondary">
+                                <td colspan="4" class="text-right">Grand Total</td>
+                                <td>${{ grandTotal }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <button type="submit" class="btn btn-info">Update Cart</button>
+                    <button type="button" class="btn btn-success">Checkout</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    {% include 'footer.html' %}
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

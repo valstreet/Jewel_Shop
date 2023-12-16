@@ -46,7 +46,7 @@
             <div class="col-md-6">
                 <h2>{{ product.product_name }}</h2>
                 <p>{{ product.description }}</p>
-                <p><strong>Price:</strong> ${{ product.price }}</p>
+                <p><strong>Price:</strong> £{{ product.price }}</p>
                 
                 <!-- Add to Cart Form -->
                 <form action="/public/add_to_cart.php" method="post">
@@ -58,7 +58,7 @@
         </div>
     </main>
 
-    {% include 'footer.php' %}
+    {% include 'footer.html' %}
     <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

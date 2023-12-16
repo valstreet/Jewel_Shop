@@ -59,10 +59,12 @@ $username = $loggedIn ? $_SESSION['username'] : 'Guest';
               <li><a class="dropdown-item" href="#" role="menuitem">3D-Printed Pieces</a></li>
             </ul>
           </li>
-              <form class="d-flex mt-3 search-form " role="search">
-  <input class="form-control search-input" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn search-button" type="submit">Search</button>
+<form class="d-flex mt-3 search-form" action="/public/search.php" method="get">
+    <input class="form-control search-input" type="search" placeholder="Search" name="q" aria-label="Search">
+    <button class="btn search-button" type="submit">Search</button>
 </form>
+
+
         </ul>
          <div class="d-flex flex-column align-items-center flex-lg-row justify-content-center gap-3 mt-4">
                             {% if loggedIn %}

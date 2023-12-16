@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="/assets/loginstyles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/0c3ed67f04.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+
+
 </head>
 
 <body>
@@ -80,14 +85,12 @@
               </div>
             </div>
 
-            <div class="d-flex flex-column justify-content-center align-items-center mt-1 mb-3 pt-1">
-              <p class="text-white-50 text-center mb-3">Log in using</p>
-              <div>
-                <a href="#!" aria-label="Facebook" class="text-light"><i class="fab fa-facebook-f fa-lg"></i></a>
-                <a href="#!" aria-label="Twitter" class="text-light mx-4"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="#!" aria-label="Google" class="text-light"><i class="fab fa-google fa-lg"></i></a>
-              </div>
-            </div>
+             <div class="d-flex flex-column justify-content-center align-items-center mt-1 mb-3 pt-1">
+      <p class="text-white-50 text-center mb-3">Log in using</p>
+      <div>
+        <a href="#!" aria-label="Google" class="text-light" id="googleSignInButton"><i class="fab fa-google fa-lg"></i></a>
+      </div>
+    </div>
 
           </div>
         </div>
@@ -144,7 +147,65 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+<script>
 
+  //  Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBLMazrNKsGqn9clPXllttB8KLE7bvzc5Q",
+    authDomain: "urbaniceapi.firebaseapp.com",
+    projectId: "urbaniceapi",
+    storageBucket: "urbaniceapi.appspot.com",
+    messagingSenderId: "765846073050",
+    appId: "1:765846073050:web:6fb33e8f7b73e6b416ffe3",
+    measurementId: "G-2C55P9N4NF"
+  };
 
+  // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+</script>
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+            var signInButton = document.getElementById('googleSignInButton');
+            if (signInButton) {
+                signInButton.addEventListener('click', signInWithGoogle);
+            }
+        });
+
+        function signInWithGoogle() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+            // Send token to backend via AJAX for verification and user session creation
+            var idToken = result.credential.idToken;
+            fetch('/public/login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'idToken=' + encodeURIComponent(idToken)
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Handle response from backend
+                console.log(data);
+                window.location.href = '/public/index.php'; // Redirect on success
+            })
+            .catch(error => console.error('Error:', error));
+        }).catch(function(error) {
+            // Handle Errors here.
+            console.error('Error during Google Sign-In:', error);
+        });
+    }
+    </script>
+    <script>
+    FileInputStream serviceAccount =
+new FileInputStream("C:/Users/valen/Downloads/urbaniceapi-firebase-adminsdk-57s8l-ba66aa892e.json");
+
+FirebaseOptions options = new FirebaseOptions.Builder()
+  .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+  .build();
+
+FirebaseApp.initializeApp(options);
+</script>
 </body>
 </html>

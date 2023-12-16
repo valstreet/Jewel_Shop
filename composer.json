@@ -1,5 +1,7 @@
 {
-    "require": {
-        "twig/twig": "^3.0"
-    }
+  "require": {
+    "twig/twig": "^3.0",
+    "google/apiclient": "^2.15",
+    "guzzlehttp/guzzle": "^7.4"
+  }
 }

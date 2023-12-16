@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session at the beginning
+
 require_once 'C:\xampp\htdocs\Jewel_Shop\templates\config.php'; // Path to config file
 require_once 'C:\xampp\htdocs\Jewel_Shop\init_twig.php'; // Path to Twig initialization file
 
