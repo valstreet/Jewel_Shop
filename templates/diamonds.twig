@@ -14,7 +14,7 @@
             {% for diamond in diamondCollection %}
                 <div class="col-lg-3 diamond-gallery">
                     <!-- Link to the product detail page with product_id -->
-                    <a href="/public/product.php?id={{ diamond.product_id }}">
+                    <a href="/public/product/{{ diamond.product_id }}">
                         <div class="image-container">
                             {% for image in diamond.images %}
                                 <img src="{{ image }}" alt="{{ diamond.title }}" class="img-fluid mb-3 rounded diamond-image {% if loop.first %}active{% endif %}">

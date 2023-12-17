@@ -16,7 +16,7 @@
             {% for necklace in necklaces %}
                 <div class="col-md-3 mb-4">
                     <div class="card">
-                        <a href="/public/product.php?id={{ necklace.product_id }}"> 
+                        <a href="/public/product/{{ necklace.product_id }}"> 
                             <img src="{{ necklace.image }}" class="card-img-top" alt="{{ necklace.product_name }}">
                         </a>
                         <div class="card-body">

@@ -16,7 +16,7 @@
 {% for ring in rings %}
     <div class="col-md-3 mb-4">
         <div class="card">
-            <a href="/public/product.php?id={{ ring.product_id }}"> 
+            <a href="/public/product/{{ ring.product_id }}"> 
             <img src="{{ ring.image }}" class="card-img-top" alt="{{ ring.product_name }}"></a>
             <div class="card-body">
                 <h5 class="card-title">{{ ring.product_name }}</h5>

@@ -53,6 +53,7 @@ if (isset($_POST['idToken'])) {
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
             echo 'Login successful, redirecting...';
+                setcookie("username", $row['username'], time() + 86400, "/"); // 86400 = 1 day
         } else {
             echo 'Invalid password';
         }

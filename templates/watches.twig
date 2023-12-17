@@ -16,7 +16,7 @@
             {% for watch in watches %}
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <a href="/public/product.php?id={{ watch.product_id }}"> 
+                        <a href="/public/product/{{ watch.product_id }}"> 
                             <img src="{{ watch.image }}" class="card-img-top" alt="{{ watch.product_name }}">
                         </a>
                         <div class="card-body">
