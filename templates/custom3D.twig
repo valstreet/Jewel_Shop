@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Custom 3D Jewelry - Urban Ice</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/productstyles.css"> 
+</head>
+
+<body>
+    {% include 'header.twig' %}
+
+    <main class="container my-5">
+        <h1>Custom 3D Jewelry Design</h1>
+        <p>Welcome to our exclusive 3D jewelry design service. Transform your ideas into stunning jewelry pieces.</p>
+
+        <section>
+            <h2>How It Works</h2>
+            <p>Describe your concept or upload a sketch, and our skilled designers will contact you and begin the process to create a unique 3D printed jewelry piece.</p>
+        </section>
+
+        <section>
+            <h2>Contact Us for a Custom Design</h2>
+            <form action="/public/custom3D.php" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description of Your Design</label>
+                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </form>
+        </section>
+    </main>
+
+    {% include 'footer.html' %}
+<script src="/assets/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+</body>
+</html>

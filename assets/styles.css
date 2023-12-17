@@ -24,7 +24,9 @@ a.navbar-brand {
         opacity: 1;
     }
 }
-
+.cart-icon{
+padding-right: 30px;
+}
 
 /* Search form container */
 .search-form {

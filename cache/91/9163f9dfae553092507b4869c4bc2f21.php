@@ -125,7 +125,7 @@ class __TwigTemplate_2a23c5e6117711448b81a894ed8ccf1d extends Template
             </div>
 
              <div class=\"d-flex flex-column justify-content-center align-items-center mt-1 mb-3 pt-1\">
-      <p class=\"text-white-50 text-center mb-3\">Log in using</p>
+      <p class=\"text-white-50 text-center mb-3\">Log in or Sign in using</p>
       <div>
         <a href=\"#!\" aria-label=\"Google\" class=\"text-light\" id=\"googleSignInButton\"><i class=\"fab fa-google fa-lg\"></i></a>
       </div>

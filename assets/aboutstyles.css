@@ -5,3 +5,6 @@ background: -webkit-linear-gradient(180deg, rgba(33,37,41,1) 0%, rgba(69,69,77,1
 background: linear-gradient(180deg, rgba(33,37,41,1) 0%, rgba(69,69,77,1) 5%, rgba(255,255,255,1) 20%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#212529",endColorstr="#ffffff",GradientType=1);
 }
+.cart-icon{
+padding-right: 30px;
+}

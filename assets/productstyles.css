@@ -185,6 +185,9 @@ a.navbar-brand {
     }
 }
 
+.cart-icon{
+padding-right: 30px;
+}
 
 /* Search form container */
 .search-form {

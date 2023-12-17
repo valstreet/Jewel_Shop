@@ -69,7 +69,7 @@ session_start();
             <a class=\"nav-link\" href=\"/public/shop.php\" role=\"menuitem\">Shop</a>
           </li>
           <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"#\" role=\"menuitem\">Custom 3D Pieces</a>
+            <a class=\"nav-link\" href=\"/public/custom3D.php\" role=\"menuitem\">Custom 3D Pieces</a>
           </li>
           <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"/public/about.php\" role=\"menuitem\">About Us</a>
@@ -92,7 +92,7 @@ session_start();
               <li>
                 <hr class=\"dropdown-divider\">
               </li>
-              <li><a class=\"dropdown-item\" href=\"#\" role=\"menuitem\">3D-Printed Pieces</a></li>
+              <li><a class=\"dropdown-item\" href=\"/public/custom3D.php\" role=\"menuitem\">3D-Printed Pieces</a></li>
             </ul>
           </li>
 <form class=\"d-flex mt-3 search-form\" action=\"/public/search.php\" method=\"get\">
@@ -126,8 +126,18 @@ session_start();
                     </div>
                 </div>
             </div>
+    <!-- Add cart icon -->
+                <div class = \"cart-icon\">
+                    <a href=\"/public/cart.php\" class=\"text-white\">
+                        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" fill=\"currentColor\" class=\"bi bi-cart\" viewBox=\"0 0 16 16\">
+                            <path d=\"M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2\"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </nav>
     </header>
+
 <script src=\"/assets/bootstrap/js/bootstrap.bundle.min.js\"></script>
 
 </body>
